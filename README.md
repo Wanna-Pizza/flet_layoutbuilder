@@ -11,7 +11,7 @@ Link to git repository:
 
 ```
 dependencies = [
-  "flet-layoutbuilder @ git+https://github.com/MyGithubAccount/flet-layoutbuilder",
+  "flet-layoutbuilder @ git+https://github.com/Wanna-Pizza/flet_layoutbuilder",
   "flet>=0.27.6",
 ]
 ```
@@ -34,4 +34,4 @@ flet build macos -v
 
 ## Documentation
 
-[Link to documentation](https://MyGithubAccount.github.io/flet-layoutbuilder/)
+[Link to documentation](https://Wanna-Pizza.github.io/flet-layoutbuilder/)

@@ -13,9 +13,9 @@ dependencies = [
 
 [project.urls]
 Homepage = "https://mydomain.dev"
-Documentation = "https://github.com/MyGithubAccount/flet-layoutbuilder"
-Repository = "https://github.com/MyGithubAccount/flet-layoutbuilder"
-Issues = "https://github.com/MyGithubAccount/flet-layoutbuilder/issues"
+Documentation = "https://github.com/Wanna-Pizza/flet_layoutbuilder"
+Repository = "https://github.com/Wanna-Pizza/flet_layoutbuilder"
+Issues = "https://github.com/Wanna-Pizza/flet_layoutbuilder/issues"
 
 [tool.setuptools.package-data]
 "flutter.flet_layoutbuilder" = ["**/*"]
