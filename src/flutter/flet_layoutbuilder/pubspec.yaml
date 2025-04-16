@@ -1,8 +1,8 @@
 name: flet_layoutbuilder
 description: Flet FletLayoutbuilder control
-repository: https://github.com/MyGithubAccount/flet-layoutbuilder/src/flutter/flet_layoutbuilder
+repository: https://github.com/Wanna-Pizza/flet_layoutbuilder/src/flutter/flet_layoutbuilder
 version: 0.1.0
-homepage: https://github.com/MyGithubAccount/flet-layoutbuilder
+homepage: https://github.com/Wanna-Pizza/flet_layoutbuilder
 
 environment:
   sdk: '>=3.3.0 <4.0.0'
