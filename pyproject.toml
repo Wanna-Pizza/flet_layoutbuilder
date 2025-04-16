@@ -1,5 +1,5 @@
 [project]
-name = "flet-layoutbuilder"
+name = "flet_layoutbuilder"
 version = "0.1.0"
 description = "FletLayoutbuilder control for Flet"
 readme = "README.md"
