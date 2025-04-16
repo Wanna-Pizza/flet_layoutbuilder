@@ -1,0 +1,7 @@
+site_name: FletLayoutbuilder
+
+theme:
+  name: "material"
+
+plugins:
+  - mkdocstrings

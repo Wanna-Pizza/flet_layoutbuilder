@@ -1,0 +1,20 @@
+name: flet_layoutbuilder
+description: Flet FletLayoutbuilder control
+repository: https://github.com/MyGithubAccount/flet-layoutbuilder/src/flutter/flet_layoutbuilder
+version: 0.1.0
+homepage: https://github.com/MyGithubAccount/flet-layoutbuilder
+
+environment:
+  sdk: '>=3.3.0 <4.0.0'
+  flutter: ">=1.17.0"
+
+dependencies:
+  flet: 0.27.6
+  flutter:
+    sdk: flutter
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0
+  
