@@ -38,7 +38,6 @@ class _LayoutBuilderControlState extends State<LayoutBuilderControl>
   }
 
   void onChange(double width, double height) {
-    // Отправляем обновления состояния одним вызовом, а не двумя
     widget.backend.updateControlState(widget.control.id,
         {"layoutWidth": width.toString(), "layoutHeight": height.toString()});
 
@@ -50,8 +49,6 @@ class _LayoutBuilderControlState extends State<LayoutBuilderControl>
         "width": width,
       }),
     );
-
-    // setState не нужен здесь, т.к. он вызывается в ином контексте
   }
 
   @override
@@ -76,15 +73,12 @@ class _LayoutBuilderControlState extends State<LayoutBuilderControl>
           final Size currentSize =
               Size(constraints.maxWidth, constraints.maxHeight);
 
-          // Улучшенная логика обнаружения изменений
           bool shouldUpdate = false;
 
-          // Обновляем при первом построении, если нужно
           if (!_hasInitialized && _updateOnBuild) {
             shouldUpdate = true;
           }
 
-          // Обновляем при изменении размера, если уже инициализировано
           if (_hasInitialized && _lastSize != currentSize) {
             shouldUpdate = true;
           }
@@ -110,7 +104,7 @@ class _LayoutBuilderControlState extends State<LayoutBuilderControl>
 
     return constrainedControl(
       context,
-      layout, // Исправлена опечатка в имени переменной
+      layout,
       widget.parent,
       widget.control,
     );
