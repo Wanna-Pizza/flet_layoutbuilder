@@ -10,9 +10,9 @@ def main(page: ft.Page):
     page.add(
         ft.Text("Resize the window to see the LayoutBuilder in action"),
         LayoutBuilder(
-            content=ft.Container(bgcolor='red',expand=True,content=ft.Text("Hello World"),alignment=ft.alignment.center),
+            content=ft.Container(bgcolor='red',expand=True,content=ft.Text("Hello World"),alignment=ft.Alignment.center()),
             update_size_on_init=True,
-            alignment=ft.alignment.center,
+            alignment=ft.Alignment.center(),
             expand=True,
             on_change=lambda e: print(e)
         ),

@@ -55,7 +55,7 @@ class _LayoutBuilderControlState extends State<LayoutBuilderControl>
           _hasInitialized = true;
           _lastSize = currentSize;
 
-          print(
+          debugPrint(
               "LayoutBuilder dimensions: Width: ${constraints.maxWidth}, Height: ${constraints.maxHeight}");
           child = child;
         });
