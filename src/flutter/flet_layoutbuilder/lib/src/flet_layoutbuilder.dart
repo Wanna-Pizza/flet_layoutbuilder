@@ -34,11 +34,12 @@ class _LayoutBuilderControlState extends State<LayoutBuilderControl>
       "width": width,
       "height": height,
     });
+    print("LayoutBuilder dimensions: Width: ${width}, Height: ${height}");
   }
 
   @override
   Widget build(BuildContext context) {
-    debugPrint("Stack with layout builder build: ${widget.control.id}");
+    print("Stack with layout builder build: ${widget.control.id}");
 
     var content = widget.control.buildWidget("content");
 
@@ -55,8 +56,6 @@ class _LayoutBuilderControlState extends State<LayoutBuilderControl>
           _hasInitialized = true;
           _lastSize = currentSize;
 
-          print(
-              "LayoutBuilder dimensions: Width: ${constraints.maxWidth}, Height: ${constraints.maxHeight}");
           child = child;
         });
         return Container(
