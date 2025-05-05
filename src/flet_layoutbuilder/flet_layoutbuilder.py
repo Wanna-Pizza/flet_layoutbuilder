@@ -22,4 +22,4 @@ class LayoutBuilder(ft.ConstrainedControl, ft.AdaptiveControl):
     alignment: Optional[ft.Alignment] = None
     content: Optional[ft.Control] = None
     update_size_on_init: Optional[bool] = False
-    on_change: ft.OptionalEventCallable["LayoutEvent"] = None
+    on_change: ft.OptionalEventCallable[LayoutEvent] = None

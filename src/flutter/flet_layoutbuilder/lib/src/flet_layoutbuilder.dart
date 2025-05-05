@@ -27,10 +27,12 @@ class _LayoutBuilderControlState extends State<LayoutBuilderControl>
   void initState() {
     super.initState();
     _updateOnBuild = widget.control.getBool("update_size_on_init") ?? false;
+    print(
+        "LayoutBuilderControl initialized with updateOnBuild: $_updateOnBuild");
   }
 
   void onChange(double width, double height) {
-    sendEvent("on_change", {
+    sendEvent("change", {
       "width": width,
       "height": height,
     });
@@ -51,17 +53,24 @@ class _LayoutBuilderControlState extends State<LayoutBuilderControl>
           final Size currentSize =
               Size(constraints.maxWidth, constraints.maxHeight);
 
-          onChange(constraints.maxWidth, constraints.maxHeight);
+          if ((_hasInitialized && _lastSize != currentSize) ||
+              (!_hasInitialized && _updateOnBuild)) {
+            onChange(constraints.maxWidth, constraints.maxHeight);
+          }
 
           _hasInitialized = true;
           _lastSize = currentSize;
 
           child = child;
         });
-        return Container(
-            clipBehavior: Clip.none,
-            alignment: widget.control.getAlignment("alignment"),
-            child: child);
+        return Stack(
+          children: [
+            Container(
+                clipBehavior: Clip.none,
+                alignment: widget.control.getAlignment("alignment"),
+                child: child),
+          ],
+        );
       },
     );
 
