@@ -34,4 +34,4 @@ flet build macos -v
 
 ## Documentation
 
-[Link to documentation](https://Wanna-Pizza.github.io/flet-layoutbuilder/)
+[Link to documentation](https://Wanna-Pizza.github.io/flet_layoutbuilder/)
