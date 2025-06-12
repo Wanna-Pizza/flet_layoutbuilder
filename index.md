@@ -29,7 +29,8 @@ def main(page: ft.Page):
                 alignment=ft.Alignment.center()
             ),
             expand=True,
-            on_change=on_change
+            on_change=on_change,
+            update_size_on_init=True  # <--- new parameter explained below
         ),
     )
 
@@ -44,6 +45,10 @@ ft.app(main)
 - **content** is the main widget placed inside the LayoutBuilder. In this example, it's a red `Container` with centered text.
 - **expand=True** makes both the LayoutBuilder and its content occupy all available space.
 - **on_change** is a callback function called whenever the LayoutBuilder size changes. In the example, it updates the text on the page with the current width and height.
+- **update_size_on_init** (bool):  
+  If set to `True`, the `on_change` callback will be called immediately on widget initialization, passing the current size to your handler.  
+  This means your function gets the actual size right away, not only after the first resize event.  
+  Default is `False`.
 
 ### Important!
 
@@ -57,6 +62,7 @@ ft.app(main)
 
 - **Responsiveness:** Build interfaces that adapt to the screen size.
 - **Interactivity:** Dynamically change content or behavior when the widget is resized.
+- **Immediate size awareness:** With `update_size_on_init=True`, your handler gets the actual size even before any manual resizing.
 - **Convenience:** No need to manually track sizes—LayoutBuilder automatically calls your handler when needed.
 
 ---
@@ -65,9 +71,10 @@ ft.app(main)
 
 ```python
 LayoutBuilder(
-    content: ft.Control,        # Widget that MUST support 'expand'
-    expand: bool = False,       # Occupy all available space if True
-    on_change: Callable = None, # Callback receiving new sizes
+    content: ft.Control,           # Widget that MUST support 'expand'
+    expand: bool = False,          # Occupy all available space if True
+    on_change: Callable = None,    # Callback receiving new sizes
+    update_size_on_init: bool = False, # If True, call on_change at init with current size
     # other parameters...
 )
 ```
@@ -75,6 +82,7 @@ LayoutBuilder(
 - `content` — The main widget inside LayoutBuilder. MUST support the `expand` parameter.
 - `expand` — If True, LayoutBuilder takes all available space.
 - `on_change(e)` — Callback called with an object containing `width` and `height` whenever the size changes.
+- `update_size_on_init` — If True, calls `on_change` immediately after widget is created, passing the initial size.
 
 ---
 
